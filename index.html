@@ -187,36 +187,45 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>How to compile vtk7.0.0 and QT5.5 in Mac OS X(EI Captain, 10.11.3)</p>
-<p>Installing QT</p>
-<ul>
+        <h3 id="Installing_QT"><a href="#Installing_QT" class="headerlink" title="Installing QT"></a>Installing QT</h3><ul>
 <li>Download QT with .dmg installer and install it (I used default)</li>
 </ul>
-<p>Compiling and installing VTK</p>
+<h3 id="Compiling_and_installing_VTK"><a href="#Compiling_and_installing_VTK" class="headerlink" title="Compiling and installing VTK"></a>Compiling and installing VTK</h3><ul>
+<li><p>Download VTK source package .zip(from <a href="http://fossies.org/linux/misc/VTK-7.0.0.tar.gz/" target="_blank" rel="external">http://fossies.org/linux/misc/VTK-7.0.0.tar.gz/</a>), and unpack it(or git it)</p>
+</li>
+<li><p>Install camke(I had CMake GUI and cmake installed from homebrew. I don’t know which tool I am really using. I guess the one from homebrew will do the work.)</p>
+</li>
+<li><p>It was rather complex with CMake GUI tool, so I decided to edit on the configuration file directly on the <strong><em>second time of compiling</em></strong>. (What, you ask why did I compiled twice? 😂I had an error testing with QT+VTK(<em>Undefined symbols for architecture x86_64</em>), and spent two days without solving it.. Finally I found this simple way to try my luck..) </p>
+</li>
+<li><p>Make a new directory under the path of the source folder, e.g. <code>./VTK</code> is your source code folder, then run these commands in order: </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mkdir ./VTK/build</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ./VTK/build</span><br></pre></td></tr></table></figure>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cmake ..</span><br></pre></td></tr></table></figure>
 <ul>
-<li>Download VTK source package .zip(from <a href="http://fossies.org/linux/misc/VTK-7.0.0.tar.gz/" target="_blank" rel="external">http://fossies.org/linux/misc/VTK-7.0.0.tar.gz/</a>), and unpack it(or git it)</li>
-<li>Install camke(I had CMake GUI and cmake installed from homebrew. I don’t know which tool I am really using. I guess the one from homebrew will do the work.)</li>
-<li>It was rather complex with CMake GUI tool, so I decided to edit on the configuration file directly on the second time of compiling. (What, you ask why did I compiled twice? 😂I had an error testing with QT+VTK(Undefined symbols for architecture x86_64), and spent two days without solving it.. Finally I found this simple way to try my luck..) </li>
-<li>Make a new directory under the path of the source folder, e.g. ./VTK is your source code folder, then run these commands in order:<br><code>mkdir ./VTK/build</code><br><code>cd ./VTK/build</code><br><code>cmake ..</code></li>
 <li><p>Now you shoud find a file ‘CMakeCache.txt’. Edit it!</p>
 <ul>
-<li>Check VTK_Group_Qt. Run cmake ..again;</li>
+<li>Check <strong>VTK_Group_Qt</strong>. Run <code>cmake ..</code>again;</li>
 <li>Later set the values related to QT to be ‘ON’(I don’t have theory behind, as I am a beginner😝. The reason I checked these values are I’m going to play around with QT any way, so they should be harmless), </li>
-<li>Especially set the value: CMAKE_OSX_ARCHITECTURES=x86_64!(If you know what does it mean.)</li>
-<li>I was lucky, that the compilition was successful after these blind settings. If you have this or that kind of errors, promise me, don’t feel upset. There’ll aways be a solution, only up to how long time would you like to spend on it 😃.</li>
+<li>Especially set the value: <strong>CMAKE_OSX_ARCHITECTURES=x86_64</strong>!(If you know what does it mean.)</li>
+<li>I was <em>lucky</em>, that the compilition was successful after these <em>blind settings</em>. If you have this or that kind of errors, promise me, don’t feel upset. There’ll aways be a solution, only up to how long time would you like to spend on it 😃.</li>
 </ul>
 </li>
-<li><p>Go the build directory, you will find there are more file there. Simplly run</p>
-<pre><code>make
-</code></pre><p>or</p>
-<pre><code>make -j2 # the number denotes the processors you want to use
-</code></pre></li>
-<li><p>Afterwards install with </p>
-<pre><code>make install
-</code></pre></li>
 </ul>
-<p>Test</p>
-<p>I always feel like to test after installing something, to see it the installation was alright. So, try this example! I really hope everything goes well with you installation, because I also don’t know what to do otherwise 😂.</p>
+<ul>
+<li><p>Go the build directory, you will find there are more file there. Simplly run</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>  or</p>
+  <figure class="highlight"><table><tr><td class="code"><pre><span class="line">make -j2 # the number denotes the processors you want to use</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>Afterwards install with </p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">make install</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h3><p>I always feel like to test after installing something, to see it the installation was alright. So, try <a href="http://www.vtk.org/Wiki/VTK/Examples/Cxx/Qt/ImageDataToQImage" target="_blank" rel="external">this example</a>! I really hope everything goes well with you installation, because I also don’t know what to do otherwise 😂.</p>
 <p>I miss Python.😑</p>
 
       
