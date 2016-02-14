@@ -26,7 +26,7 @@ Download QT with .dmg installer and install it (I used default)
 Compiling and installing VTK
 
 Download VTK source pac">
-<meta property="og:updated_time" content="2016-02-14T22:07:11.000Z">
+<meta property="og:updated_time" content="2016-02-14T22:08:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VTK-7.0 + QT-5.5, OS X 10.11">
 <meta name="twitter:description" content="How to compile vtk7.0.0 and QT5.5 in Mac OS X(EI Captain, 10.11.3)
@@ -90,11 +90,11 @@ Download VTK source pac">
 				<div class="tips-box hide">
 					<div class="tips-arrow"></div>
 					<ul class="tips-inner">
-						<li>菜单</li>
-						<li>標籤</li>
+						<li>Menu</li>
+						<li>Tags</li>
 						
 						
-						<li>關於</li>
+						<li>Über</li>
 						
 					</ul>
 				</div>
@@ -228,7 +228,7 @@ Download VTK source pac">
 <li>Download VTK source package .zip(from <a href="http://fossies.org/linux/misc/VTK-7.0.0.tar.gz/" target="_blank" rel="external">http://fossies.org/linux/misc/VTK-7.0.0.tar.gz/</a>), and unpack it(or git it)</li>
 <li>Install camke(I had CMake GUI and cmake installed from homebrew. I don’t know which tool I am really using. I guess the one from homebrew will do the work.)</li>
 <li>It was rather complex with CMake GUI tool, so I decided to edit on the configuration file directly on the second time of compiling. (What, you ask why did I compiled twice? 😂I had an error testing with QT+VTK(Undefined symbols for architecture x86_64), and spent two days without solving it.. Finally I found this simple way to try my luck..) </li>
-<li>Make a new directory under the path of the source folder, e.g. ./VTK is your source code folder, then run these commands in order:<br>  mkdir ./VTK/build<br>  cd ./VTK/build<br>  cmake ..</li>
+<li>Make a new directory under the path of the source folder, e.g. ./VTK is your source code folder, then run these commands in order:<br><code>mkdir ./VTK/build</code><br><code>cd ./VTK/build</code><br><code>cmake ..</code></li>
 <li><p>Now you shoud find a file ‘CMakeCache.txt’. Edit it!</p>
 <ul>
 <li>Check VTK_Group_Qt. Run cmake ..again;</li>
@@ -263,7 +263,7 @@ Download VTK source pac">
 <div class="share_jia">
 	<!-- JiaThis Button BEGIN -->
 	<div class="jiathis_style">
-		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<span class="jiathis_txt">Share to: &nbsp; </span>
 		<a class="jiathis_button_facebook"></a> 
     <a class="jiathis_button_twitter"></a>
     <a class="jiathis_button_plus"></a> 
